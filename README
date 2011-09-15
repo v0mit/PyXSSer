@@ -1,0 +1,31 @@
+Changelog:
+
+    - Added agressive scan mode.
+    - Proxy support, SOCK4/5 and HTTP.
+    - Verbrose
+    - Rewrote a lot of thing that didn't fit with
+    the new agressive mode and other planned modes.
+
+Usage:
+pyxsser.py [-h] [-l LOG_FILE] [-m MODE] [-v] [-p PROXY] target_url
+
+Help:
+C:\Users\username\Dropbox\pyxsser\src>pyxsser.py -h
+usage: pyxsser.py [-h] [-l LOG_FILE] [-m MODE] [-v] [-p PROXY] target_url
+
+positional arguments:
+  target_url            Url to target.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -l LOG_FILE           Optional log file, vulnerable.txt is default.
+  -m MODE               Scan mode, agressive(1), moderate(2) or passive(3),
+                        default is moderate.
+  -v, --verbrose
+  -p PROXY, --proxy PROXY
+                        Proxy SOCK4/5 or HTTP, (-p SOCK your.sock.server:1080)
+                        or (-p HTTP your.http.server:3128)
+                        
+examples:
+    pyxsser.py -m 3 -v -p HTTP proxy.server.com:8080 http://target.com
+    pyxsser.py -m 3 -v -l bugs.txt http://target.com
